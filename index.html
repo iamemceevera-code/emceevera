@@ -184,6 +184,7 @@ section{position:relative;}
 /* VIDEO */
 .vframe{position:relative;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;}
 .vframe .ph{position:absolute;inset:0;}
+.vframe.portrait{aspect-ratio:9/16;max-width:420px;margin:0 auto;}
 .play{position:relative;z-index:2;width:62px;height:62px;border-radius:50%;border:1px solid rgba(255,255,255,.8);display:flex;align-items:center;justify-content:center;cursor:pointer;}
 .play::before{content:'';border-style:solid;border-width:8px 0 8px 13px;border-color:transparent transparent transparent #fff;margin-left:3px;}
 .vcap{text-align:center;margin-top:28px;font-family:'Noto Serif SC',serif;font-size:18px;}
@@ -495,7 +496,7 @@ footer{padding:60px 0 40px;border-top:1px solid var(--line);}
 <section class="pad-l">
   <div class="wrap" style="max-width:900px;">
     <div class="eyebrow reveal" style="margin:0 auto 20px;justify-content:center;">VERA PROFILE FILM</div>
-    <div class="vframe reveal">
+    <div class="vframe portrait reveal">
       <div class="ph has-photo" id="filmVideoWrap"><video id="filmVideo" src="vera-work-video.mp4" playsinline preload="metadata"></video></div>
       <div class="play" id="filmPlayBtn" onclick="const v=document.getElementById('filmVideo'); v.setAttribute('controls',''); v.play(); this.style.display='none';"></div>
     </div>
