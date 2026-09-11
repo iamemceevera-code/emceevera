@@ -45,7 +45,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:ce
 nav .logo, nav .nav-links a{color:var(--cream);}
 nav.scrolled{background:rgba(246,240,229,.94);backdrop-filter:blur(10px);padding:15px 6vw;box-shadow:0 1px 0 var(--line);}
 nav.scrolled .logo, nav.scrolled .nav-links a{color:var(--espresso);}
-.logo{font-family:'Fraunces',serif;font-size:16px;letter-spacing:.22em;font-weight:500;opacity:0;animation:logoIn 1.4s .3s ease forwards;}
+.logo{font-family:'Fraunces',serif;font-size:16px;letter-spacing:.22em;font-weight:500;opacity:0;animation:logoIn 1.4s .3s ease forwards;display:flex;align-items:center;}
+.logo-img{height:26px;width:auto;display:block;transition:opacity .3s ease;}
+.logo-black{display:none;}
+nav.scrolled .logo-white{display:none;}
+nav.scrolled .logo-black{display:block;}
 @keyframes logoIn{to{opacity:1;}}
 .nav-links{display:flex;gap:26px;font-size:12.5px;letter-spacing:.02em;}
 .nav-links a{position:relative;padding-bottom:3px;white-space:nowrap;}
@@ -180,7 +184,7 @@ section{position:relative;}
 /* VIDEO */
 .vframe{position:relative;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;}
 .vframe .ph{position:absolute;inset:0;}
-.play{position:relative;z-index:2;width:62px;height:62px;border-radius:50%;border:1px solid rgba(255,255,255,.8);display:flex;align-items:center;justify-content:center;}
+.play{position:relative;z-index:2;width:62px;height:62px;border-radius:50%;border:1px solid rgba(255,255,255,.8);display:flex;align-items:center;justify-content:center;cursor:pointer;}
 .play::before{content:'';border-style:solid;border-width:8px 0 8px 13px;border-color:transparent transparent transparent #fff;margin-left:3px;}
 .vcap{text-align:center;margin-top:28px;font-family:'Noto Serif SC',serif;font-size:18px;}
 .msg-body{max-width:600px;margin:44px auto 0;text-align:center;font-size:15px;color:var(--espresso-soft);}
@@ -239,7 +243,10 @@ footer{padding:60px 0 40px;border-top:1px solid var(--line);}
 <body>
 
 <nav id="nav">
-  <div class="logo">EMCEE VERA</div>
+  <div class="logo">
+    <img src="logowhite.png" alt="EMCEE VERA" class="logo-img logo-white">
+    <img src="logoblack.png" alt="EMCEE VERA" class="logo-img logo-black">
+  </div>
   <div class="nav-links">
     <a href="#meet">认识 Vera</a>
     <a href="#role">我的服务</a>
@@ -499,7 +506,10 @@ footer{padding:60px 0 40px;border-top:1px solid var(--line);}
     <div class="section-kicker reveal" style="margin:0 auto;text-align:center;">
       <h2 class="section-title serif">有一段话，想亲自告诉你。</h2>
     </div>
-    <div class="vframe reveal" style="margin-top:50px;"><div class="ph" data-label="VERA MESSAGE VIDEO"></div><div class="play"></div></div>
+    <div class="vframe reveal" style="margin-top:50px;">
+      <div class="ph has-photo" id="msgVideoWrap"><video id="msgVideo" src="vera-message-video.mp4" playsinline preload="metadata"></video></div>
+      <div class="play" id="msgPlayBtn" onclick="const v=document.getElementById('msgVideo'); v.setAttribute('controls',''); v.play(); this.style.display='none';"></div>
+    </div>
     <div class="msg-body reveal">
       <p>如果你正在筹备婚礼，希望你可以找到一个，让你安心的人。</p>
       <p>如果你觉得我们的想法刚好一样，欢迎来认识我。</p>
@@ -522,7 +532,10 @@ footer{padding:60px 0 40px;border-top:1px solid var(--line);}
 <footer>
   <div class="wrap">
     <div class="footer-top">
-      <div><div class="footer-logo">EMCEE VERA</div><div class="footer-role">Wedding Emcee</div></div>
+      <div>
+        <div class="footer-logo"><img src="logoblack.png" alt="EMCEE VERA" style="height:30px;width:auto;"></div>
+        <div class="footer-role">Wedding Emcee</div>
+      </div>
       <div class="footer-slogan serif">只用专业，成就你的回忆。</div>
     </div>
     <div class="footer-bottom"><span>© 2026 EMCEE VERA</span><span>All Rights Reserved.</span></div>
