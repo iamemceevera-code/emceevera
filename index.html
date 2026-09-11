@@ -395,12 +395,12 @@ footer{padding:60px 0 40px;border-top:1px solid var(--line);}
       <div class="eyebrow">THE VERA EXPERIENCE</div>
       <h2 class="section-title serif">从第一次对话，到最后的道别。</h2>
     </div>
-    <div class="exp-step reveal"><div class="exp-num-col"><div class="exp-num">01</div><h3 class="serif">初次沟通</h3><p>了解你们的婚礼、故事与想法。</p></div><div class="ph" data-label="STEP 01" style="aspect-ratio:4/3;"></div></div>
-    <div class="exp-step reveal"><div class="ph" data-label="STEP 02" style="aspect-ratio:4/3;"></div><div class="exp-num-col"><div class="exp-num">02</div><h3 class="serif">Wedding Questionnaire</h3><p>把重要资讯一次整理清楚。</p></div></div>
-    <div class="exp-step reveal"><div class="exp-num-col"><div class="exp-num">03</div><h3 class="serif">Rundown Planning</h3><p>根据婚礼实际情况，梳理完整流程。</p></div><div class="ph" data-label="STEP 03" style="aspect-ratio:4/3;"></div></div>
-    <div class="exp-step reveal"><div class="ph" data-label="STEP 04" style="aspect-ratio:4/3;"></div><div class="exp-num-col"><div class="exp-num">04</div><h3 class="serif">Custom Script</h3><p>根据你们的婚礼，写属于你们的主持内容。</p></div></div>
-    <div class="exp-step reveal"><div class="exp-num-col"><div class="exp-num">05</div><h3 class="serif">Wedding Briefing</h3><p>确认当天流程、音乐、影片、重要 Cue。</p></div><div class="ph" data-label="STEP 05" style="aspect-ratio:4/3;"></div></div>
-    <div class="exp-step reveal"><div class="ph" data-label="STEP 06" style="aspect-ratio:4/3;"></div><div class="exp-num-col"><div class="exp-num">06</div><h3 class="serif">On The Day</h3><p>你们负责享受婚礼，剩下的，交给 Vera。</p></div></div>
+    <div class="exp-step reveal"><div class="exp-num-col"><div class="exp-num">01</div><h3 class="serif">初次沟通</h3><p>了解你们的婚礼、故事与想法。</p></div><div class="ph has-photo" style="aspect-ratio:4/3;"><img src="experience-1.jpg" alt="初次沟通"></div></div>
+    <div class="exp-step reveal"><div class="ph has-photo" style="aspect-ratio:4/3;"><img src="experience-2.jpg" alt="Wedding Questionnaire"></div><div class="exp-num-col"><div class="exp-num">02</div><h3 class="serif">Wedding Questionnaire</h3><p>把重要资讯一次整理清楚。</p></div></div>
+    <div class="exp-step reveal"><div class="exp-num-col"><div class="exp-num">03</div><h3 class="serif">Rundown Planning</h3><p>根据婚礼实际情况，梳理完整流程。</p></div><div class="ph has-photo" style="aspect-ratio:4/3;"><img src="experience-3.jpg" alt="Rundown Planning"></div></div>
+    <div class="exp-step reveal"><div class="ph has-photo" style="aspect-ratio:4/3;"><img src="experience-4.jpg" alt="Custom Script"></div><div class="exp-num-col"><div class="exp-num">04</div><h3 class="serif">Custom Script</h3><p>根据你们的婚礼，写属于你们的主持内容。</p></div></div>
+    <div class="exp-step reveal"><div class="exp-num-col"><div class="exp-num">05</div><h3 class="serif">Wedding Briefing</h3><p>确认当天流程、音乐、影片、重要 Cue。</p></div><div class="ph has-photo" style="aspect-ratio:4/3;"><img src="experience-5.jpg" alt="Wedding Briefing"></div></div>
+    <div class="exp-step reveal"><div class="ph has-photo" style="aspect-ratio:4/3;"><img src="experience-6.jpg" alt="On The Day"></div><div class="exp-num-col"><div class="exp-num">06</div><h3 class="serif">On The Day</h3><p>你们负责享受婚礼，剩下的，交给 Vera。</p></div></div>
     <div class="exp-final en reveal">FROM THE FIRST CONVERSATION<br>TO THE LAST GOODBYE.</div>
     <div class="exp-final2 serif reveal">你们负责期待婚礼。<br>流程和现场，交给 Vera。</div>
   </div>
@@ -495,7 +495,10 @@ footer{padding:60px 0 40px;border-top:1px solid var(--line);}
 <section class="pad-l">
   <div class="wrap" style="max-width:900px;">
     <div class="eyebrow reveal" style="margin:0 auto 20px;justify-content:center;">VERA PROFILE FILM</div>
-    <div class="vframe reveal"><div class="ph has-photo" style="filter:brightness(.75);"><img src="images/vera/vera-work-03.jpg" alt="Vera Profile Film 预览"></div><div class="play"></div></div>
+    <div class="vframe reveal">
+      <div class="ph has-photo" id="filmVideoWrap"><video id="filmVideo" src="vera-work-video.mp4" playsinline preload="metadata"></video></div>
+      <div class="play" id="filmPlayBtn" onclick="const v=document.getElementById('filmVideo'); v.setAttribute('controls',''); v.play(); this.style.display='none';"></div>
+    </div>
     <div class="vcap serif reveal">认识麦克风之外的 Vera。</div>
   </div>
 </section>
